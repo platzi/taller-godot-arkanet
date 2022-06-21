@@ -30,8 +30,9 @@ func disparar():
 		cooldown = false
 		$Timer.start()
 		var instancia_disparo = Disparo.instance()
-		instancia_disparo.position = $DisparoPos.position
+		instancia_disparo.global_position = $DisparoPos.global_position
 		add_child(instancia_disparo)
+		instancia_disparo.set_as_toplevel(true)
 
 func _physics_process(_delta):
 	get_inputs()

@@ -55,13 +55,12 @@ rotation = 0.00660059
 rotate = false
 loop = false
 
-[node name="Enemigo" type="Area2D" parent="PathFollow2D"]
+[node name="Enemigo" type="Area2D" parent="PathFollow2D" groups=["enemigo"]]
 position = Vector2( 0.00012207, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D/Enemigo"]
 frames = SubResource( 7 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Enemigo"]
@@ -76,13 +75,12 @@ offset = 100.0
 rotate = false
 loop = false
 
-[node name="Enemigo" type="Area2D" parent="PathFollow2D2"]
+[node name="Enemigo" type="Area2D" parent="PathFollow2D2" groups=["enemigo"]]
 position = Vector2( 0.00012207, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D2/Enemigo"]
 frames = SubResource( 7 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D2/Enemigo"]
@@ -97,13 +95,12 @@ offset = 200.0
 rotate = false
 loop = false
 
-[node name="Enemigo" type="Area2D" parent="PathFollow2D3"]
+[node name="Enemigo" type="Area2D" parent="PathFollow2D3" groups=["enemigo"]]
 position = Vector2( 0.00012207, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D3/Enemigo"]
 frames = SubResource( 7 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D3/Enemigo"]
@@ -118,13 +115,12 @@ offset = 300.0
 rotate = false
 loop = false
 
-[node name="Enemigo" type="Area2D" parent="PathFollow2D4"]
+[node name="Enemigo" type="Area2D" parent="PathFollow2D4" groups=["enemigo"]]
 position = Vector2( 0.00012207, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D4/Enemigo"]
 frames = SubResource( 7 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D4/Enemigo"]
@@ -139,12 +135,13 @@ offset = 400.0
 rotate = false
 loop = false
 
-[node name="Enemigo" type="Area2D" parent="PathFollow2D5"]
+[node name="Enemigo" type="Area2D" parent="PathFollow2D5" groups=["enemigo"]]
 position = Vector2( 0.00012207, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D5/Enemigo"]
 frames = SubResource( 7 )
 animation = "Idle"
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D5/Enemigo"]
