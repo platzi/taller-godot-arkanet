@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Personaje.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GrupoEnemigos.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/EnemigoDirigido.tscn" type="PackedScene" id=3]
 
 [node name="Nivel1" type="Node2D"]
 
@@ -9,3 +10,6 @@
 
 [node name="GrupoEnemigos" parent="." instance=ExtResource( 2 )]
 speed = 500.0
+
+[node name="EnemigoDirigido" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1020, 154 )

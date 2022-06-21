@@ -117,7 +117,7 @@ graph_offset = Vector2( -109.483, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
-[node name="Personaje" type="KinematicBody2D"]
+[node name="Personaje" type="KinematicBody2D" groups=["personaje"]]
 position = Vector2( 400, 519 )
 script = ExtResource( 1 )
 
@@ -125,6 +125,7 @@ script = ExtResource( 1 )
 position = Vector2( -6, 26 )
 frames = SubResource( 7 )
 animation = "idle"
+frame = 4
 playing = true
 
 [node name="Globo" type="Sprite" parent="."]
