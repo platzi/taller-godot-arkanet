@@ -125,7 +125,7 @@ script = ExtResource( 1 )
 position = Vector2( -6, 26 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 4
+frame = 1
 playing = true
 
 [node name="Globo" type="Sprite" parent="."]
@@ -146,3 +146,11 @@ tree_root = SubResource( 18 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 19 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="DisparoPos" type="Position2D" parent="."]
+position = Vector2( 130, 38 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
