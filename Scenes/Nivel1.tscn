@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Personaje.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GrupoEnemigos.tscn" type="PackedScene" id=2]
@@ -8,9 +8,18 @@
 [ext_resource path="res://Scenes/Monte.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/fondo/fondo.jpg" type="Texture" id=7]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=8]
+[ext_resource path="res://Assets/hud/barra_vida.png" type="Texture" id=9]
+[ext_resource path="res://Assets/hud/vida.png" type="Texture" id=10]
+[ext_resource path="res://Assets/fonts/Kubika Font/Kubika Rough.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/hud/tabla_puntos.png" type="Texture" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.05
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_filter = true
+font_data = ExtResource( 11 )
 
 [node name="Nivel1" type="Node2D"]
 
@@ -52,5 +61,53 @@ shape = SubResource( 1 )
 
 [node name="Monte2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2213, -27 )
+
+[node name="HUD" type="CanvasLayer" parent="." groups=["hud"]]
+
+[node name="BarraVida" type="TextureRect" parent="HUD"]
+margin_left = 112.0
+margin_top = 51.0
+margin_right = 504.0
+margin_bottom = 152.0
+texture = ExtResource( 9 )
+
+[node name="Vida" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 148.0
+margin_top = 37.0
+margin_right = 215.0
+margin_bottom = 59.0
+texture = ExtResource( 10 )
+
+[node name="Vida2" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 226.0
+margin_top = 38.0
+margin_right = 293.0
+margin_bottom = 60.0
+texture = ExtResource( 10 )
+
+[node name="Vida3" type="TextureRect" parent="HUD/BarraVida"]
+margin_left = 304.0
+margin_top = 37.0
+margin_right = 371.0
+margin_bottom = 59.0
+texture = ExtResource( 10 )
+
+[node name="BarraPuntos" type="TextureRect" parent="HUD"]
+margin_left = 1524.0
+margin_top = 57.0
+margin_right = 1850.0
+margin_bottom = 158.0
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="HUD/BarraPuntos"]
+margin_left = 132.0
+margin_top = 28.0
+margin_right = 249.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+valign = 1
+clip_text = true
 
 [connection signal="body_entered" from="PowerUp" to="PowerUp" method="_on_PowerUp_body_entered"]

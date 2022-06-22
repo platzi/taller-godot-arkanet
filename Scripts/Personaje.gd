@@ -4,12 +4,16 @@ export (int) var velocidad = 600
 
 onready var Disparo = preload("res://Scenes/Disparo.tscn")
 onready var DisparoEspecial = preload("res://Scenes/DisparoEspecial.tscn")
-
+onready var HUD = get_tree().get_nodes_in_group("hud")[0]
 onready var playback = $AnimationTree.get("parameters/playback")
 
 var movimiento = Vector2(0,0)
 var cooldown = true
 var powerup = false
+
+func _ready():
+	Global.vidas = 3
+	Global.LabelPuntos = HUD.get_node("BarraPuntos/Label")
 
 func get_inputs():
 	movimiento = Vector2()
@@ -47,6 +51,9 @@ func _physics_process(_delta):
 
 func take_damage():
 	Global.remove_vida()
+	var barra_vida = HUD.get_node("BarraVida")
+	var vidas = barra_vida.get_children()
+	vidas[Global.vidas].visible = false
 	$AnimationPlayer.play("take_damage")
 
 func _on_Timer_timeout():
@@ -55,9 +62,9 @@ func _on_Timer_timeout():
 
 
 func _on_Area2D_area_entered(area):
-#	if area.is_in_group("enemigo"):
-#		take_damage()
-#		area.set_explosion()
+	if area.is_in_group("enemigo"):
+		take_damage()
+		area.set_explosion()
 	pass # Replace with function body.
 
 
