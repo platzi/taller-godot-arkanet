@@ -67,30 +67,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:collision_layer")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:collision_mask")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1 ]
-}
 
 [sub_resource type="Animation" id=9]
 resource_name = "move_left"
@@ -183,7 +159,7 @@ animation = "move_right"
 
 [sub_resource type="AnimationNodeStateMachine" id=18]
 states/RESET/node = SubResource( 11 )
-states/RESET/position = Vector2( 383, 121 )
+states/RESET/position = Vector2( 385, 116 )
 states/move_left/node = SubResource( 12 )
 states/move_left/position = Vector2( 177, 121 )
 states/move_right/node = SubResource( 13 )

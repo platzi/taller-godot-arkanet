@@ -14,3 +14,8 @@ func _on_Area2D_area_entered(area):
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 	pass # Replace with function body.
+
+
+func _on_Area2D_body_entered(body):
+	if body.get_class() == "TileMap":
+		queue_free()
