@@ -32,10 +32,11 @@ script = ExtResource( 8 )
 position = Vector2( -560, -21 )
 
 [node name="GrupoEnemigos" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1696, 52 )
 speed = 500.0
 
 [node name="EnemigoDirigido" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1020, 154 )
+position = Vector2( 2936, 98 )
 
 [node name="PowerUp" type="Area2D" parent="."]
 position = Vector2( 606, 241 )
