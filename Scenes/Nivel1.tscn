@@ -1,17 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Personaje.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GrupoEnemigos.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EnemigoDirigido.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/disparo/powerUp.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/PowerUp.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 40.05
 
 [node name="Nivel1" type="Node2D"]
 
 [node name="Personaje" parent="." instance=ExtResource( 1 )]
-collision_layer = 0
-collision_mask = 0
 
 [node name="GrupoEnemigos" parent="." instance=ExtResource( 2 )]
 speed = 500.0
 
 [node name="EnemigoDirigido" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1020, 154 )
+
+[node name="PowerUp" type="Area2D" parent="."]
+position = Vector2( 606, 241 )
+script = ExtResource( 5 )
+
+[node name="PowerUp" type="Sprite" parent="PowerUp"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUp"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="PowerUp" to="PowerUp" method="_on_PowerUp_body_entered"]

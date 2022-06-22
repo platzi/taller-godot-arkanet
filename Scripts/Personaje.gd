@@ -3,10 +3,13 @@ extends KinematicBody2D
 export (int) var velocidad = 600
 
 onready var Disparo = preload("res://Scenes/Disparo.tscn")
+onready var DisparoEspecial = preload("res://Scenes/DisparoEspecial.tscn")
+
 onready var playback = $AnimationTree.get("parameters/playback")
 
 var movimiento = Vector2(0,0)
 var cooldown = true
+var powerup = false
 
 func get_inputs():
 	movimiento = Vector2()
@@ -29,7 +32,11 @@ func disparar():
 	if cooldown:
 		cooldown = false
 		$Timer.start()
-		var instancia_disparo = Disparo.instance()
+		var instancia_disparo 
+		if powerup:
+			instancia_disparo = DisparoEspecial.instance()
+		else:
+			instancia_disparo = Disparo.instance()
 		instancia_disparo.global_position = $DisparoPos.global_position
 		add_child(instancia_disparo)
 		instancia_disparo.set_as_toplevel(true)
@@ -48,6 +55,13 @@ func _on_Timer_timeout():
 
 
 func _on_Area2D_area_entered(area):
+#	if area.is_in_group("enemigo"):
+#		take_damage()
+#		area.set_explosion()
+	pass # Replace with function body.
+
+
+func _on_PowerUp_area_entered(area):
 	if area.is_in_group("enemigo"):
 		take_damage()
 		area.set_explosion()
