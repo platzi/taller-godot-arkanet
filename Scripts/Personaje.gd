@@ -38,7 +38,16 @@ func _physics_process(_delta):
 	get_inputs()
 	movimiento = move_and_slide(movimiento)
 
+func take_damage():
+	$AnimationPlayer.play("take_damage")
 
 func _on_Timer_timeout():
 	cooldown = true
+	pass # Replace with function body.
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("enemigo"):
+		take_damage()
+		area.set_explosion()
 	pass # Replace with function body.
