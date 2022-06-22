@@ -206,7 +206,7 @@ script = ExtResource( 1 )
 position = Vector2( -6, 26 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 3
+frame = 4
 playing = true
 
 [node name="Globo" type="Sprite" parent="."]

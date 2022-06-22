@@ -39,6 +39,7 @@ func _physics_process(_delta):
 	movimiento = move_and_slide(movimiento)
 
 func take_damage():
+	Global.remove_vida()
 	$AnimationPlayer.play("take_damage")
 
 func _on_Timer_timeout():

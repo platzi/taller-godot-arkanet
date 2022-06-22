@@ -103,11 +103,12 @@ height = 65.5336
 
 [node name="EnemigoDirigido" type="Area2D" groups=["enemigo"]]
 script = ExtResource( 2 )
+puntos = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

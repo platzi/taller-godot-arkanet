@@ -1,5 +1,6 @@
 extends Area2D
 
+export (int) var puntos = 50
 
 func set_explosion():
 	collision_mask = 0

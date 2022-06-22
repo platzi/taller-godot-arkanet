@@ -1,6 +1,7 @@
 extends Area2D
 
 export (int) var velocidad = 500
+export (int) var puntos = 50
 
 onready var personaje = get_tree().get_nodes_in_group("personaje") 
 
