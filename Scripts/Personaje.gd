@@ -46,10 +46,11 @@ func disparar():
 		instancia_disparo.set_as_toplevel(true)
 
 func _physics_process(_delta):
-	get_inputs()
-	movimiento = move_and_slide(movimiento)
-	if is_on_wall():
-		take_damage()
+	if !Global.cinematica:
+		get_inputs()
+		movimiento = move_and_slide(movimiento)
+		if is_on_wall():
+			take_damage()
 		
 func take_damage():
 	Global.remove_vida()
