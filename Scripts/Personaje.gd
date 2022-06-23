@@ -36,6 +36,7 @@ func disparar():
 	if cooldown:
 		cooldown = false
 		$Timer.start()
+		$AudioStreamPlayer.play()
 		var instancia_disparo 
 		if powerup:
 			instancia_disparo = DisparoEspecial.instance()

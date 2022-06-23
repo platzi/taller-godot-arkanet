@@ -6,6 +6,7 @@ func set_explosion():
 	collision_mask = 0
 	collision_layer = 0
 	$AnimatedSprite.animation = "explosion"
+	$AudioStreamPlayer.play()
 	yield($AnimatedSprite,"animation_finished")
 	queue_free()
 
