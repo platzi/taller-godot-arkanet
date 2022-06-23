@@ -57,7 +57,7 @@ func take_damage():
 	var barra_vida = HUD.get_node("BarraVida")
 	var vidas = barra_vida.get_children()
 	vidas[Global.vidas].visible = false
-	$AnimationPlayer.play("take_damage")
+	$DamageAnim.play("take_damage")
 
 func _on_Timer_timeout():
 	cooldown = true

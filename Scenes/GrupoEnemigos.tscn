@@ -11,6 +11,7 @@ _data = {
 [node name="GrupoEnemigos" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 2 )
+speed = 500.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2( 1661, 177 )
