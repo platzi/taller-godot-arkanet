@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Arkanet"
-run/main_scene="res://Scenes/TemplateNivel.tscn"
+run/main_scene="res://Scenes/PantallaPrincipal.tscn"
 config/icon="res://icon-arkanet.png"
 
 [autoload]
